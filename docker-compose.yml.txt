@@ -1,0 +1,15 @@
+
+version: '3'
+
+services:
+  phantomuf:
+    build: .
+    container_name: phantomuf
+    restart: unless-stopped
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+    privileged: true
+    volumes:
+      - ./logs:/app/logs
+      - ./phantomuf.conf:/app/phantomuf.conf
